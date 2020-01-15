@@ -1,4 +1,4 @@
-package ru.sqrt.ptf.addressbook;
+package ru.sqrt.ptf.addressbook.appmanager.model;
 
 public class GroupData {
   private final String name;

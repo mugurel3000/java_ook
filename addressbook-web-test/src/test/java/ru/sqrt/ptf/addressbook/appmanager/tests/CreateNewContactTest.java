@@ -1,9 +1,10 @@
-package ru.sqrt.ptf.addressbook;
+package ru.sqrt.ptf.addressbook.appmanager.tests;
 
 import java.util.concurrent.TimeUnit;
 import org.testng.annotations.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import ru.sqrt.ptf.addressbook.appmanager.model.ContactData;
 
 public class CreateNewContactTest {
   private WebDriver wd;
