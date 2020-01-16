@@ -22,8 +22,6 @@ public class ApplicationManager {
     sessionHelper.login("user", "pass", By.xpath("//input[@value='Login']"), "admin", "secret");
   }
 
-
-
   public void stop() {
     wd.quit();
   }
