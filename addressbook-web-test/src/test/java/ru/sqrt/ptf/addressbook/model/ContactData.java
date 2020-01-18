@@ -1,4 +1,4 @@
-package ru.sqrt.ptf.addressbook.appmanager.model;
+package ru.sqrt.ptf.addressbook.model;
 
 public class ContactData {
   private final String firstname;

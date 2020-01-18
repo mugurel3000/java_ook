@@ -1,4 +1,4 @@
-package ru.sqrt.ptf.addressbook.appmanager.model;
+package ru.sqrt.ptf.addressbook.model;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

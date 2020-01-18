@@ -1,4 +1,4 @@
-package ru.sqrt.ptf.addressbook.appmanager.tests;
+package ru.sqrt.ptf.addressbook.tests;
 
 import org.testng.annotations.*;
 

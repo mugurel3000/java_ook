@@ -2,7 +2,7 @@ package ru.sqrt.ptf.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import ru.sqrt.ptf.addressbook.appmanager.model.GroupData;
+import ru.sqrt.ptf.addressbook.model.GroupData;
 
 public class GroupHelper extends HelperBase {
 

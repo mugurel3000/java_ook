@@ -3,8 +3,7 @@ package ru.sqrt.ptf.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import ru.sqrt.ptf.addressbook.appmanager.model.ContactData;
-import ru.sqrt.ptf.addressbook.appmanager.model.ContactHelper;
+import ru.sqrt.ptf.addressbook.model.ContactHelper;
 
 import java.util.concurrent.TimeUnit;
 
@@ -38,6 +37,9 @@ public class ApplicationManager {
   public NavigationHelper getNavigationHelper() {
     return navigationHelper;
   }
-  public ContactHelper getContactHelper() {return contactHelper;}
+
+  public ContactHelper getContactHelper() {
+    return contactHelper;
+  }
 
 }

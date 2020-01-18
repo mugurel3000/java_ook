@@ -1,7 +1,7 @@
-package ru.sqrt.ptf.addressbook.appmanager.tests;
+package ru.sqrt.ptf.addressbook.tests;
 
 import org.testng.annotations.Test;
-import ru.sqrt.ptf.addressbook.appmanager.model.GroupData;
+import ru.sqrt.ptf.addressbook.model.GroupData;
 
 public class GroupCreationTests extends TestBase {
 

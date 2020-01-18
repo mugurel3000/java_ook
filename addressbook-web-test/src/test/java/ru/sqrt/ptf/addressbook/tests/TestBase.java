@@ -1,15 +1,11 @@
-package ru.sqrt.ptf.addressbook.appmanager.tests;
+package ru.sqrt.ptf.addressbook.tests;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import ru.sqrt.ptf.addressbook.appmanager.ApplicationManager;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import ru.sqrt.ptf.addressbook.appmanager.model.ContactData;
-
-import java.util.concurrent.TimeUnit;
+import ru.sqrt.ptf.addressbook.appmanager.ApplicationManager;
+import ru.sqrt.ptf.addressbook.model.ContactData;
 
 public class TestBase {
 
@@ -33,7 +29,7 @@ public class TestBase {
     wd.findElement(By.name(submit)).click();
   }
 
-  protected void fillFildNewContact(ContactData contactData) {
+  protected void fillFieldNewContact(ContactData contactData) {
     wd.findElement(By.name("firstname")).click();
     wd.findElement(By.name("firstname")).clear();
     wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
@@ -72,21 +68,4 @@ public class TestBase {
     app.stop();
   }
 
-  private boolean isElementPresent(By by) {
-    try {
-      wd.findElement(by);
-      return true;
-    } catch (NoSuchElementException e) {
-      return false;
-    }
-  }
-
-  private boolean isAlertPresent() {
-    try {
-      wd.switchTo().alert();
-      return true;
-    } catch (NoAlertPresentException e) {
-      return false;
-    }
-  }
 }

@@ -1,9 +1,8 @@
-package ru.sqrt.ptf.addressbook.appmanager.tests;
+package ru.sqrt.ptf.addressbook.tests;
 
-import org.testng.annotations.*;
-import org.openqa.selenium.*;
-
-import ru.sqrt.ptf.addressbook.appmanager.model.ContactData;
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+import ru.sqrt.ptf.addressbook.model.ContactData;
 
 public class CreateNewContactTest extends TestBase {
 
