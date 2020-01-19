@@ -8,6 +8,7 @@ import ru.sqrt.ptf.addressbook.model.ContactHelper;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
+  public WebDriver driver;
   WebDriver wd;
   private SessionHelper sessionHelper;
   private NavigationHelper navigationHelper;
@@ -42,4 +43,4 @@ public class ApplicationManager {
     return contactHelper;
   }
 
-}
+  }
