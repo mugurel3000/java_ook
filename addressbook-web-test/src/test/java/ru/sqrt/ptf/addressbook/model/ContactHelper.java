@@ -32,7 +32,6 @@ public class ContactHelper extends HelperBase {
 
   }
 
-
   public void addNewContact(String s) {
     click(By.name(s));
   }
@@ -59,5 +58,27 @@ public class ContactHelper extends HelperBase {
 
   public void alert() {
     wd.switchTo().alert().accept();
+  }
+
+  public void createContact(ContactData contact) {
+    fillFieldNewContact(contact);
+    addNewContact("submit");
+  }
+
+  private void fillFieldNewContact(ContactData contactData) {
+    type(By.name("address"), contactData.getAddress());
+    type(By.name("company"), contactData.getCompany());
+    type(By.name("firstname"), contactData.getFirstname());
+    type(By.name("home"), contactData.getHome());
+    type(By.name("lastname"), contactData.getLastname());
+    type(By.name("middlename"), contactData.getMiddlename());
+    type(By.name("nickname"), contactData.getNickname());
+    type(By.name("mobile"), contactData.getMobiletel());
+    type(By.name("title"), contactData.getTitle());
+  }
+
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.name("selected[]"));
   }
 }
