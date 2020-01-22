@@ -2,6 +2,8 @@ package ru.sqrt.ptf.addressbook.model;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import ru.sqrt.ptf.addressbook.appmanager.HelperBase;
 
 public class ContactHelper extends HelperBase {
@@ -10,7 +12,8 @@ public class ContactHelper extends HelperBase {
     super(wd);
   }
 
-  public void fillFieldNewContact(ContactData contactData) {
+
+  public void fillFieldNewContact(ContactData contactData, boolean creation) {
     type(By.name("address"), contactData.getAddress());
     type(By.name("company"), contactData.getCompany());
     type(By.name("firstname"), contactData.getFirstname());
@@ -21,21 +24,29 @@ public class ContactHelper extends HelperBase {
     type(By.name("mobile"), contactData.getMobiletel());
     type(By.name("title"), contactData.getTitle());
 
+    if (creation) {
+      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+    } else {
+      Assert.assertFalse(isElementPresent(By.name("new_group")));
+    }
+
   }
+
 
   public void addNewContact(String s) {
     click(By.name(s));
   }
+
   public void selectContact(String s) {
     click(By.name(s));
   }
 
   public void deleteContact(String s) {
-    click(By.xpath("//input[@value='Delete']")) ;
+    click(By.xpath("//input[@value='Delete']"));
   }
 
   public void editContact(String s) {
-    click(By.xpath("//img[@alt='Edit']")) ;
+    click(By.xpath("//img[@alt='Edit']"));
   }
 
   public void updateContact(String s) {
@@ -45,6 +56,7 @@ public class ContactHelper extends HelperBase {
   public void gotoHomePage(String s) {
     click(By.linkText("home page"));
   }
+
   public void alert() {
     wd.switchTo().alert().accept();
   }
