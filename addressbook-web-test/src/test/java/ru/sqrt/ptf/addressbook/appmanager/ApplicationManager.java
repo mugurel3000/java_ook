@@ -24,11 +24,11 @@ public class ApplicationManager {
   }
 
   public void init() {
-    if (browser.toLowerCase().trim() == BrowserType.FIREFOX) {
+    if (browser.toLowerCase().trim().equals(BrowserType.FIREFOX)) {
       wd = new FirefoxDriver();
-    } else if (browser.toLowerCase().trim() == BrowserType.CHROME) {
+    } else if (browser.toLowerCase().trim().equals(BrowserType.CHROME)) {
       wd = new ChromeDriver();
-    } else if (browser.toLowerCase().trim() == BrowserType.IE) {
+    } else if (browser.toLowerCase().trim().equals(BrowserType.IE)) {
       wd = new InternetExplorerDriver();
     }
 
