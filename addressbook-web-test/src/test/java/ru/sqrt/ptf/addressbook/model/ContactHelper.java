@@ -24,7 +24,7 @@ public class ContactHelper extends HelperBase {
     type(By.name("title"), contactData.getTitle());
   }
 
-  public void fillFieldNewContact( boolean creation) {
+  public void fillFieldNewContact(boolean creation) {
     type(By.name("address"), "Socoleni");
     type(By.name("company"), "OOK");
     type(By.name("firstname"), "Max");
@@ -69,6 +69,7 @@ public class ContactHelper extends HelperBase {
 
   public void alert() {
     wd.switchTo().alert().accept();
+    wd.findElement(By.cssSelector("div.msgbox"));
   }
 
   public void createContact() {
@@ -76,10 +77,11 @@ public class ContactHelper extends HelperBase {
     addNewContact();
   }
 
-
-
-
   public boolean isThereAContact() {
     return isElementPresent(By.name("selected[]"));
+  }
+
+  public int getContactCount() {
+    return wd.findElements(By.name("selected[]")).size();
   }
 }
