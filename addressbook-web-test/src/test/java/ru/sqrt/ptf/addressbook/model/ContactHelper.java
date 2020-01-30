@@ -2,9 +2,13 @@ package ru.sqrt.ptf.addressbook.model;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.sqrt.ptf.addressbook.appmanager.HelperBase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactHelper extends HelperBase {
 
@@ -47,7 +51,7 @@ public class ContactHelper extends HelperBase {
     click(By.name("submit"));
   }
 
-  public void selectContact() {
+  public void selectContact(int i) {
     click(By.name("selected[]"));
   }
 
@@ -83,5 +87,16 @@ public class ContactHelper extends HelperBase {
 
   public int getContactCount() {
     return wd.findElements(By.name("selected[]")).size();
+  }
+
+  public List<ContactData> getContactList() {
+    List<ContactData> groups = new ArrayList<>();
+    List<WebElement> elements = wd.findElements(By.name("selected[]"));
+    for (WebElement element : elements) {
+      String name = element.getText();
+      ContactData group = new ContactData("Max", "Margulet", null, null, null, null, null, null, null, null);
+      groups.add(group);
+    }
+    return groups;
   }
 }

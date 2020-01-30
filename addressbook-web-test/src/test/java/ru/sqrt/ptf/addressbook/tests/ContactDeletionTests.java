@@ -2,21 +2,24 @@ package ru.sqrt.ptf.addressbook.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ru.sqrt.ptf.addressbook.model.ContactData;
+
+import java.util.List;
 
 public class ContactDeletionTests extends TestBase {
 
   @Test
   public void testContactDeletion() {
-    int before = app.getContactHelper().getContactCount();
     if (!app.getContactHelper().isThereAContact()) {
       app.getNavigationHelper().gotoNewContactPage();
       app.getContactHelper().createContact();
       app.getContactHelper().gotoHomePage();
     }
-    app.getContactHelper().selectContact();
+    List<ContactData> before = app.getContactHelper().getContactList();
+    app.getContactHelper().selectContact(before.size() -1);
     app.getContactHelper().deleteContact();
     app.getContactHelper().alert();
-    int after = app.getContactHelper().getContactCount();
-    Assert.assertEquals(after, before -1);
+    List<ContactData> after = app.getContactHelper().getContactList();
+    Assert.assertEquals(after.size(), before.size() -1);
   }
 }
